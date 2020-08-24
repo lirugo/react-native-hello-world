@@ -10,7 +10,7 @@ import {
 } from 'react-native-paper';
 
 
-import Home from './app/components/Home/index'
+import Food from './app/components/Food/index'
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 
@@ -20,14 +20,14 @@ const App: () => React$Node = () => {
 
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'home', title: 'Food', icon: 'food-fork-drink' },
+    { key: 'food', title: 'Food', icon: 'food-fork-drink' },
     { key: 'recents', title: 'History', icon: 'history' },
     { key: 'chart', title: 'Chart', icon: 'chart-line' },
     { key: 'albums', title: 'Preference', icon: 'cog' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    home: Home,
+    food: Food,
     albums: AlbumsRoute,
     recents: RecentsRoute,
   });
