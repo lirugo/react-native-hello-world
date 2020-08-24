@@ -8,7 +8,7 @@ class Home extends Component {
     render() {
         return (
             <View>
-                <Text>Food Component</Text>
+                <Text>History Component</Text>
             </View>
         )
     }
