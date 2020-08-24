@@ -4,7 +4,6 @@ import {
   View,
 } from 'react-native';
 import {
-  Appbar,
   BottomNavigation,
   Text,
 } from 'react-native-paper';
@@ -33,18 +32,15 @@ const App: () => React$Node = () => {
   });
 
   return (
-    <>
-      <BottomNavigation
-        navigationState={{ index, routes }}
-        onIndexChange={setIndex}
-        renderScene={renderScene}
-      />
-    </>
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-
 });
 
 export default App;

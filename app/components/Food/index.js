@@ -1,21 +1,25 @@
-import * as React from 'react';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import * as React from 'react'
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import FoodCard from './FoodCard'
 
-const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
-
-const Food = () => (
-        <Card>
-            <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} />
-            <Card.Content>
-                <Title>Card title</Title>
-                <Paragraph>Card content</Paragraph>
-            </Card.Content>
-            <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
-            <Card.Actions>
-                <Button>Cancel</Button>
-                <Button>Ok</Button>
-            </Card.Actions>
-        </Card>
+const FoodList = () => (
+    <SafeAreaView style={styles.safeAreaView}>
+        <ScrollView>
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+            <FoodCard />
+        </ScrollView>
+    </SafeAreaView>
 );
 
-export default Food;
+const styles = StyleSheet.create({
+    safeAreaView: {
+        flex: 1,
+        marginHorizontal: 10,
+    },
+});
+
+export default FoodList;
