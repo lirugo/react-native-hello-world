@@ -1,45 +1,44 @@
 import * as React from 'react';
 import {
   StyleSheet,
+  View,
 } from 'react-native';
-import { 
+import {
   Appbar,
   BottomNavigation,
   Text,
 } from 'react-native-paper';
 
 
-const MusicRoute = () => <Text>Music</Text>;
+import Home from './app/components/Home/index'
 
 const AlbumsRoute = () => <Text>Albums</Text>;
 
 const RecentsRoute = () => <Text>Recents</Text>;
 
 const App: () => React$Node = () => {
+
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'music', title: 'Music', icon: 'queue-music' },
-    { key: 'albums', title: 'Albums', icon: 'album' },
-    { key: 'recents', title: 'Recents', icon: 'history' },
+    { key: 'home', title: 'Food', icon: 'food-fork-drink' },
+    { key: 'recents', title: 'History', icon: 'history' },
+    { key: 'chart', title: 'Chart', icon: 'chart-line' },
+    { key: 'albums', title: 'Preference', icon: 'cog' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
+    home: Home,
     albums: AlbumsRoute,
     recents: RecentsRoute,
   });
 
   return (
     <>
-
-
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
-
-
+      <BottomNavigation
+        navigationState={{ index, routes }}
+        onIndexChange={setIndex}
+        renderScene={renderScene}
+      />
     </>
   );
 };
